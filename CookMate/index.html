@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CookMate — Discover delicious recipes and cook with confidence.">
+  <title>CookMate — Your Kitchen Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== Navigation ========== -->
+  <header class="site-header" id="top">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="#top" class="navbar__logo" aria-label="CookMate home">
+        <span class="navbar__logo-icon" aria-hidden="true">🍳</span>
+        CookMate
+      </a>
+
+      <button
+        class="navbar__toggle"
+        id="navToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="#recipes" class="navbar__link">Recipes</a></li>
+        <li><a href="#about" class="navbar__link">About</a></li>
+        <li><a href="#contact" class="navbar__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ========== Hero Section ========== -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Welcome to CookMate</p>
+          <h1 class="hero__title" id="hero-heading">
+            Cook something <span class="hero__highlight">delicious</span> tonight
+          </h1>
+          <p class="hero__subtitle">
+            Explore hand-picked recipes for every skill level. From quick weeknight
+            meals to weekend feasts — your kitchen adventure starts here.
+          </p>
+
+          <!-- Search bar (UI only — functionality in v2) -->
+          <form class="search-bar" id="searchForm" role="search" aria-label="Recipe search">
+            <label for="searchInput" class="visually-hidden">Search recipes</label>
+            <input
+              type="search"
+              id="searchInput"
+              class="search-bar__input"
+              placeholder="Search for pasta, salad, dessert..."
+              autocomplete="off"
+            >
+            <button type="submit" class="search-bar__btn">
+              <span aria-hidden="true">🔍</span>
+              Search
+            </button>
+          </form>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__plate hero__plate--main">🥗</div>
+          <div class="hero__plate hero__plate--accent">🍝</div>
+          <div class="hero__plate hero__plate--small">🍰</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Recipe Cards ========== -->
+    <section class="recipes section" id="recipes" aria-labelledby="recipes-heading">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title" id="recipes-heading">Featured Recipes</h2>
+          <p class="section__subtitle">
+            Six crowd-pleasing dishes to inspire your next meal.
+          </p>
+        </header>
+
+        <!-- Cards are rendered statically by JavaScript from recipes.js -->
+        <div class="recipe-grid" id="recipeGrid" role="list"></div>
+      </div>
+    </section>
+
+    <!-- ========== About Section ========== -->
+    <section class="about section" id="about" aria-labelledby="about-heading">
+      <div class="container about__inner">
+        <div class="about__content">
+          <h2 class="section__title" id="about-heading">About CookMate</h2>
+          <p class="about__text">
+            CookMate is your friendly kitchen companion — built to make home cooking
+            approachable, enjoyable, and stress-free. We believe great food doesn't
+            need to be complicated.
+          </p>
+          <p class="about__text">
+            Whether you're a beginner learning your first recipe or a seasoned cook
+            looking for fresh ideas, CookMate brings curated dishes straight to your
+            screen with clear steps and honest ingredient lists.
+          </p>
+          <ul class="about__features">
+            <li class="about__feature">
+              <span class="about__feature-icon" aria-hidden="true">📖</span>
+              <div>
+                <strong>Clear recipes</strong>
+                <p>Simple instructions anyone can follow.</p>
+              </div>
+            </li>
+            <li class="about__feature">
+              <span class="about__feature-icon" aria-hidden="true">⏱️</span>
+              <div>
+                <strong>Time-friendly</strong>
+                <p>Dishes for busy weeknights and lazy weekends.</p>
+              </div>
+            </li>
+            <li class="about__feature">
+              <span class="about__feature-icon" aria-hidden="true">🌿</span>
+              <div>
+                <strong>Fresh ingredients</strong>
+                <p>Recipes built around real, wholesome food.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="about__visual" aria-hidden="true">
+          <div class="about__card">
+            <span class="about__card-emoji">👨‍🍳</span>
+            <p>Cook with confidence</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Contact Section ========== -->
+    <section class="contact section" id="contact" aria-labelledby="contact-heading">
+      <div class="container contact__inner">
+        <header class="section__header section__header--center">
+          <h2 class="section__title" id="contact-heading">Get in Touch</h2>
+          <p class="section__subtitle">
+            Have a recipe idea or feedback? We'd love to hear from you.
+          </p>
+        </header>
+
+        <!-- Contact form is now validated in Version 2 (client-side only) -->
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="contact-form__group">
+            <label for="contactName" class="contact-form__label">Name</label>
+            <input
+              type="text"
+              id="contactName"
+              class="contact-form__input"
+              placeholder="Your name"
+              required
+            >
+            <p class="contact-form__error" id="contactNameError" aria-live="polite"></p>
+          </div>
+
+          <div class="contact-form__group">
+            <label for="contactEmail" class="contact-form__label">Email</label>
+            <input
+              type="email"
+              id="contactEmail"
+              class="contact-form__input"
+              placeholder="you@example.com"
+              required
+            >
+            <p class="contact-form__error" id="contactEmailError" aria-live="polite"></p>
+          </div>
+
+          <div class="contact-form__group">
+            <label for="contactMessage" class="contact-form__label">Message</label>
+            <textarea
+              id="contactMessage"
+              class="contact-form__input contact-form__textarea"
+              rows="5"
+              placeholder="Tell us what's on your mind..."
+              required
+            ></textarea>
+            <p class="contact-form__error" id="contactMessageError" aria-live="polite"></p>
+          </div>
+
+          <button type="submit" class="btn btn--primary contact-form__submit">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <a href="#top" class="site-footer__logo">
+          <span aria-hidden="true">🍳</span> CookMate
+        </a>
+        <p class="site-footer__tagline">Made with love for home cooks everywhere.</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+        <a href="#recipes">Recipes</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="site-footer__copy">
+        &copy; <span id="footerYear"></span> CookMate. Version 2.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/recipes.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
